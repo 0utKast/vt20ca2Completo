@@ -5,11 +5,11 @@ En los próximos videotutoriales desarrollaremos un proyecto que nos permita ver
 
 ## Instalación
 
-Clone the repository, move to the folder containing the source file for this chapter and install the NPM dependencies by executing the following:
+Clonar el repositorio the repository, moverse al directorio que contiene el archivo fuente e instalar las dependencias NPM ejecutando:
 
 ```bash
-$ git clone https://github.com/.............................
-$ cd ......................................
+$ git clone https://github.com/0utKast/vt20ca2Completo.git
+$ cd vt20ca2Completo
 $ npm install
 ```
 
