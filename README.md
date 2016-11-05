@@ -17,13 +17,11 @@ Un hook `npm postinstall` manejará la instalación de los typings requeridos pa
 
 ### Temas cubierto
 
-Veremos el proceso de creación de plantillas complejas, bien inline o dentro de archivos view. 
-We will go through the process of building complex templates, either inline or wrapped in views files. For doing so we will create a new component from scratch and build up on top of it. Then we will review how property binding is handled compared to the traditional JavaScript attribute value bindings. We will slightly overview event binding as well with short real examples of interactive behaviors and animations and will enhance the component output by implementing some built-in pipes and directives.
+Veremos el proceso de creación de plantillas complejas, bien inline o dentro de archivos view. Para hacerlo crearemos un nuevo componente desde cero. Veremos como se maneja el enlace de propiedades comparado con el enlace de atributos tradicional en JavaScript. Mejoraremos nuestro componente mediante el uso de Pipes y directivas integradas.
 
-### Skills learned
+### Habilidades aprendidas
 
-* Using data stores with our components
-* Built-in pipes.
-* Built-in directives.
-* Components as directives with views vs Decorator-style directives.
-* Custom directives.
+* Usar almacenamiento de datos con nuestros componentes
+* Pipes integradas.
+* Directivas integradas.
+* Directivas personalizadas.
