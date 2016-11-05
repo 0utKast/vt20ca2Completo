@@ -1,0 +1,71 @@
+<div class="container text-center">
+  <img src="assets/img/reloj2.png" alt="Reloj"/>
+  <div class="container">
+    <h3>
+      {{ queuedTareas | i18nPlural: queueHeaderMapping }} para hoy
+      <span class="small" *ngIf="queuedTareas > 0">(Tiempo estimado:
+        {{ queuedTareas * 25 | formateoHoraTareas }})</span>
+    </h3>
+    <p>
+      <span *ngFor="let queuedTask of tasks | tareaQueuedOnly: true ">
+        <tarea-task-icons
+          [task]="queuedTask"
+          [taskTooltip]="tooltip"
+          size="50">
+        </tarea-task-icons>
+      </span>
+    </p>
+    <p #tooltip [hidden]="queuedTareas === 0">Apunta con el Ratón para detalles</p>
+
+    <h4>Cartera de Tareas</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID Tarea</th>
+          <th>Nombre Tarea</th>
+          <th>Completada Para</th>
+          <th>Ciclos</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks; let i = index">
+          <th scope="row">{{i}}
+            <span *ngIf="task.queued" class="label label-info">
+              En Cola
+            </span>
+          </th>
+          <td>{{task.name | slice: 0:35 }}
+            <span [hidden]="task.name.length < 35">...</span>
+          </td>
+          <td>{{task.deadline | date: 'fullDate' }}
+            <span *ngIf="task.deadline < today" class="label label-danger">
+              Atrasado
+            </span>
+          </td>
+          <td class="text-center">{{task.tareasRequeridas}}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-default btn-xs"
+              (click)="toggleTask(task)"
+              [ngSwitch]="task.queued">
+              <template [ngSwitchWhen]="false">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                Añadir
+              </template>
+              <template [ngSwitchWhen]="true">
+                <i class="glyphicon glyphicon-minus-sign"></i>
+                Quitar
+              </template>
+              <template ngSwitchDefault>
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                Add
+              </template>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
